@@ -13,7 +13,12 @@ public class Point {
     this.y = y;
 
   }
-  public double distance() {
-    return Math.sqrt(Math.pow(this.x - this.y, 2));
+  public double distance(Point p) {
+    return Math.sqrt (Math.pow((this.x-p.x),2)+Math.pow((this.y-p.y),2));
   }
 }
+
+  /**то есть вызывалась эта функция так: distance(point1, point1)
+  а теперь один из этих двух объектов становится "ведущим", именно в нём будет вызываться метод, а второй -- ведомым, он будет по прежнему передаваться как параметр:
+        point1.distance(point2)
+   при этом объект, в котором вызывается метод, внутри этого метода доступен под именем this. а параметры как обычно доступны под теми именами, которые мы им сами дадим**/
