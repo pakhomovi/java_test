@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
  * Created by igor on 15.02.2017.
  */
 public class ApplicationManager {
+
   FirefoxDriver wd;
 
   private SessionHelper sessionHelper;
@@ -37,18 +38,6 @@ public class ApplicationManager {
     sessionHelper.login("admin", "secret");
   }
 
-
-  public void fillGroupForm(GroupData groupData) {
-    wd.findElement(By.name("group_name")).click();
-    wd.findElement(By.name("group_name")).clear();
-    wd.findElement(By.name("group_name")).sendKeys(groupData.getName());
-    wd.findElement(By.name("group_header")).click();
-    wd.findElement(By.name("group_header")).clear();
-    wd.findElement(By.name("group_header")).sendKeys(groupData.getHeader());
-    wd.findElement(By.name("group_footer")).click();
-    wd.findElement(By.name("group_footer")).clear();
-    wd.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
-  }
 
   public void stop() {
     wd.quit();
