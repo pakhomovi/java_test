@@ -8,11 +8,11 @@ import ru.stqa.pft.addressbook.model.EditData;
  * Created by igor on 15.02.2017.
  */
 public class EditHelper {
+
   private FirefoxDriver wd;
 
   public EditHelper(FirefoxDriver wd) {
     this.wd = wd;
-
   }
 
   public void reternHomePage() {
@@ -60,5 +60,9 @@ public class EditHelper {
       wd.findElement(By.name("email")).click();
       wd.findElement(By.name("email")).clear();
       wd.findElement(By.name("email")).sendKeys(editData.getEmail());
+  }
+
+  public void goToAddNewEdit() {
+    wd.findElement(By.linkText("add new")).click();
   }
 }

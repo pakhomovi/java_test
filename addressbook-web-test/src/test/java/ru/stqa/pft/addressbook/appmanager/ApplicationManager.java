@@ -10,7 +10,6 @@ import java.util.concurrent.TimeUnit;
  * Created by igor on 15.02.2017.
  */
 public class ApplicationManager {
-
   FirefoxDriver wd;
 
   private EditHelper editHelper;
@@ -34,17 +33,13 @@ public class ApplicationManager {
     groupHelper = new GroupHelper(wd);
     navigatioHelper = new NavigatioHelper(wd);
     sessionHelper = new SessionHelper(wd);
-    editHelper = new EditHelper(wd);
     sessionHelper.login("admin", "secret");
+    editHelper = new EditHelper(wd);
   }
 
 
   public void stop() {
     wd.quit();
-  }
-
-  public void goToAddNewEdit() {
-    wd.findElement(By.linkText("add new")).click();
   }
 
   public GroupHelper getGroupHelper() {
