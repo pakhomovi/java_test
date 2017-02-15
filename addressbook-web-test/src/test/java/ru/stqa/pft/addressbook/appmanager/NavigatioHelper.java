@@ -7,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  * Created by igor on 15.02.2017.
  */
 public class NavigatioHelper {
-  FirefoxDriver wd;
+  private FirefoxDriver wd;
 
   public NavigatioHelper(FirefoxDriver wd) {
     this.wd = wd;
