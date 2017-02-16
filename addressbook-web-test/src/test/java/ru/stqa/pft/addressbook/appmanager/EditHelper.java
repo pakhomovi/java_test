@@ -7,62 +7,48 @@ import ru.stqa.pft.addressbook.model.EditData;
 /**
  * Created by igor on 15.02.2017.
  */
-public class EditHelper {
-
-  private FirefoxDriver wd;
+public class EditHelper extends HelperBase{
 
   public EditHelper(FirefoxDriver wd) {
-    this.wd = wd;
+    super(wd);
   }
 
   public void reternHomePage() {
-      wd.findElement(By.linkText("home page")).click();
+      click(By.linkText("home page"));
   }
 
   public void addEditForm() {
-      wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
+      click(By.xpath("//div[@id='content']/form/input[21]"));
   }
 
   public void editForm(EditData editData) {
-      wd.findElement(By.name("firstname")).click();
-      wd.findElement(By.name("firstname")).clear();
-      wd.findElement(By.name("firstname")).sendKeys(editData.getFirstname());
-      wd.findElement(By.name("middlename")).click();
-      wd.findElement(By.name("middlename")).clear();
-      wd.findElement(By.name("middlename")).sendKeys(editData.getMiddlename());
-      wd.findElement(By.name("lastname")).click();
-      wd.findElement(By.name("lastname")).clear();
-      wd.findElement(By.name("lastname")).sendKeys(editData.getLastname());
-      wd.findElement(By.name("nickname")).click();
-      wd.findElement(By.name("nickname")).clear();
-      wd.findElement(By.name("nickname")).sendKeys(editData.getNickname());
-      wd.findElement(By.name("title")).click();
-      wd.findElement(By.name("title")).clear();
-      wd.findElement(By.name("title")).sendKeys(editData.getTitle());
-      wd.findElement(By.name("company")).click();
-      wd.findElement(By.name("company")).clear();
-      wd.findElement(By.name("company")).sendKeys(editData.getCompany());
-      wd.findElement(By.name("address")).click();
-      wd.findElement(By.name("address")).clear();
-      wd.findElement(By.name("address")).sendKeys(editData.getAddress());
-      wd.findElement(By.name("home")).click();
-      wd.findElement(By.name("home")).clear();
-      wd.findElement(By.name("home")).sendKeys(editData.getHome());
-      wd.findElement(By.name("mobile")).click();
-      wd.findElement(By.name("mobile")).clear();
-      wd.findElement(By.name("mobile")).sendKeys(editData.getMobile());
-      wd.findElement(By.name("work")).click();
-      wd.findElement(By.name("work")).clear();
-      wd.findElement(By.name("work")).sendKeys(editData.getWork());
-      wd.findElement(By.name("fax")).click();
-      wd.findElement(By.name("fax")).clear();
-      wd.findElement(By.name("fax")).sendKeys(editData.getFax());
-      wd.findElement(By.name("email")).click();
-      wd.findElement(By.name("email")).clear();
-      wd.findElement(By.name("email")).sendKeys(editData.getEmail());
+      click(By.name("firstname"));
+      type(By.name("firstname"), editData.getFirstname());
+      click(By.name("middlename"));
+      type(By.name("middlename"), editData.getMiddlename());
+      click(By.name("lastname"));
+      type(By.name("lastname"), editData.getLastname());
+      click(By.name("nickname"));
+      type(By.name("nickname"), editData.getNickname());
+      click(By.name("title"));
+      type(By.name("title"), editData.getTitle());
+      click(By.name("company"));
+      type(By.name("company"), editData.getCompany());
+      click(By.name("address"));
+      type(By.name("address"), editData.getAddress());
+      click(By.name("home"));
+      type(By.name("home"), editData.getHome());
+      click(By.name("mobile"));
+      type(By.name("mobile"), editData.getMobile());
+      click(By.name("work"));
+      type(By.name("work"), editData.getWork());
+      click(By.name("fax"));
+      type(By.name("fax"), editData.getFax());
+      click(By.name("email"));
+      type(By.name("email"), editData.getEmail());
   }
 
   public void goToAddNewEdit() {
-    wd.findElement(By.linkText("add new")).click();
+    click(By.linkText("add new"));
   }
 }
