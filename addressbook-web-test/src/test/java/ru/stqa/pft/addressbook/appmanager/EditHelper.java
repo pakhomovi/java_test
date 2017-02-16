@@ -67,6 +67,14 @@ public class EditHelper extends HelperBase{
   public void addUpdateEdit() {
     click(By.name("update"));
   }
+
+  public void deleteSelectEdit() {
+    click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+  }
+
+  public void conformEditDeletion() {
+    wd.switchTo().alert().accept();
+  }
   //public void editEdit() {
   //  click(By.xpath("//table[@id='maintable']/tbody/tr[3]/td[8]/a/img"));
   //}
