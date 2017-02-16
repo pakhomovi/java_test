@@ -51,4 +51,24 @@ public class EditHelper extends HelperBase{
   public void goToAddNewEdit() {
     click(By.linkText("add new"));
   }
+
+  public void reternHome() {
+    click(By.linkText("home"));
+  }
+
+  public void selectEdit() {
+    click(By.xpath("//input[@id='10']"));
+  }
+
+  public void editEdit() {
+    click(By.xpath("//table[@id='maintable']/tbody/tr[3]/td[8]/a/img"));
+  }
+
+  public void addUpdateEdit() {
+    click(By.name("update"));
+  }
+  //public void editEdit() {
+  //  click(By.xpath("//table[@id='maintable']/tbody/tr[3]/td[8]/a/img"));
+  //}
+
 }
